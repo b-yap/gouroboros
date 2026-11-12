@@ -179,7 +179,7 @@ func ValidateLeiosBlockBodyNodeToClient(block *DijkstraBlock) error {
 // NOTE: maxEndorserBlockExUnits and maxRefScriptSizePerEndorserBlock are not
 // checked on purpose. The node only applies them when building an EB, never
 // to one it receives, so checking them here could reject a CertRB the node
-// accepted.
+// accepted. VerifyBlockState logs a warning when the ExUnits total is over.
 func ValidateLeiosClosureSize(
 	block *DijkstraBlock,
 	pparams *DijkstraProtocolParameters,
